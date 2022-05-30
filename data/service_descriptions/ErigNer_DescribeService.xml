@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><wps:ProcessOfferings xmlns:wps="http://www.opengis.net/wps/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wps/2.0 http://schemas.opengis.net/wps/2.0/wps.xsd">
+  <wps:ProcessOffering jobControlOptions="async-execute dismiss sync-execute" outputTransmission="value reference" processVersion="1.0.0" processModel="native">
+    <wps:Process xsi:schemaLocation="http://www.opengis.net/wps/2.0 http://schemas.opengis.net/wps/2.0/wps.xsd">
+      <ows:Title>Erig Ner Service Adapter</ows:Title>
+      <ows:Abstract>Extraction of spatial features and spatial relationships from text. Provides an XML document. API : http://erig.univ-pau.fr/PERDIDO/api/ner/txt_xml/Documentation : http://erig.univ-pau.fr/PERDIDO/api.jsp#esne. </ows:Abstract>
+      <ows:Identifier>choucas.erig.algorithm.ErigNer</ows:Identifier>
+      <ows:Metadata xlink:href="http://www.semanticweb.org/home/ontologies/2018/6/untitled-ontology-6#Service_d’annotation_géographique" xlink:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/concept_functionality"/>
+      <ows:Metadata xlink:href="http://erig.univ-pau.fr/PERDIDO/api.jsp" xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation"/>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>api_key</ows:Title>
+        <ows:Abstract>Your API key</ows:Abstract>
+        <ows:Identifier>api_key</ows:Identifier>
+        <wps:LiteralData>
+          <wps:Format mimeType="application/xml" default="true"/>
+          <wps:Format mimeType="text/xml"/>
+          <wps:Format mimeType="text/plain"/>
+          <wps:Format mimeType="text/plain" encoding="base64"/>
+          <LiteralDataDomain default="true">
+            <ows:AnyValue/>
+            <ows:DataType ows:reference="https://www.w3.org/2001/XMLSchema-datatypes#string">string</ows:DataType>
+            <ows:DefaultValue>choucas</ows:DefaultValue>
+          </LiteralDataDomain>
+        </wps:LiteralData>
+      </wps:Input>
+      <wps:Input minOccurs="1" maxOccurs="1">
+        <ows:Title>content</ows:Title>
+        <ows:Abstract>Textual content to annotate</ows:Abstract>
+        <ows:Identifier>content</ows:Identifier>
+        <wps:LiteralData>
+          <wps:Format mimeType="application/xml" default="true"/>
+          <wps:Format mimeType="text/xml"/>
+          <wps:Format mimeType="text/plain"/>
+          <wps:Format mimeType="text/plain" encoding="base64"/>
+          <LiteralDataDomain default="true">
+            <ows:AnyValue/>
+            <ows:DataType ows:reference="https://www.w3.org/2001/XMLSchema-datatypes#string">string</ows:DataType>
+            <ows:DefaultValue/>
+          </LiteralDataDomain>
+        </wps:LiteralData>
+      </wps:Input>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>lang</ows:Title>
+        <ows:Abstract>Content language</ows:Abstract>
+        <ows:Identifier>lang</ows:Identifier>
+        <wps:LiteralData>
+          <wps:Format mimeType="application/xml" default="true"/>
+          <wps:Format mimeType="text/xml"/>
+          <wps:Format mimeType="text/plain"/>
+          <wps:Format mimeType="text/plain" encoding="base64"/>
+          <LiteralDataDomain default="true">
+            <ows:AllowedValues>
+              <ows:Value>English</ows:Value>
+              <ows:Value>French</ows:Value>
+              <ows:Value>Spanish</ows:Value>
+            </ows:AllowedValues>
+            <ows:DataType ows:reference="https://www.w3.org/2001/XMLSchema-datatypes#string">string</ows:DataType>
+            <ows:DefaultValue>French</ows:DefaultValue>
+          </LiteralDataDomain>
+        </wps:LiteralData>
+      </wps:Input>
+      <wps:Output>
+        <ows:Title>dataOutput</ows:Title>
+        <ows:Identifier>dataOutput</ows:Identifier>
+        <wps:LiteralData>
+          <wps:Format mimeType="application/xml" default="true"/>
+          <wps:Format mimeType="text/xml"/>
+          <wps:Format mimeType="text/plain"/>
+          <wps:Format mimeType="text/plain" encoding="base64"/>
+          <LiteralDataDomain default="true">
+            <ows:AnyValue/>
+            <ows:DataType ows:reference="https://www.w3.org/2001/XMLSchema-datatypes#string">string</ows:DataType>
+          </LiteralDataDomain>
+        </wps:LiteralData>
+      </wps:Output>
+    </wps:Process>
+  </wps:ProcessOffering>
+</wps:ProcessOfferings>
